@@ -17,7 +17,7 @@ return new class extends Migration
             $table->text('description');
             $table->enum('status', ['Available', 'En route', 'Not available'])->default('Not available');
             $table->unsignedBigInteger('taxi_id')->unique();
-            $table->unsignedBigInteger('route_id')->default(null);
+            $table->unsignedBigInteger('route_id')->nullable()->default(Null);
             $table->string('payment_method');
             $table->timestamps();
 
